@@ -13,6 +13,12 @@ IT_portafolio/
 ├── Informe_Final_RedTeam_BlueTeam_Linux_COMPLETO.pdf   # Proyecto: Ataque y defensa de infraestructura Linux
 ├── proyecto_linux_administracion_de_una_red.pdf        # Proyecto: Administración integral de una red Linux segura
 ├── Test_IT_MiguelAngelDeLaCruzEspinosa.pdf             # Evaluación técnica de Infraestructura TI (Windows/Redes/VM)
+├── Reporte_Laboratorio_osTicket_Windows.pdf            # Proyecto: Sistema de Ticketing Help Desk & SOC (osTicket + Docker)
+├── OS-ticketLab/                                       # Infraestructura Docker Compose + MySQL y evidencias de osTicket
+│   ├── docker-compose.yml                              # Orquestación de contenedores (osTicket + MySQL 5.7 + volumen)
+│   ├── .env.example                                    # Plantilla de variables de entorno para despliegue
+│   ├── README.md                                       # Documentación técnica, troubleshooting en Windows/WSL2 y galería
+│   └── screenshots/                                    # 12 capturas del portal, colas de triaje, notas SOC y dashboard
 ├── curso_Administracion_de_redes_practicas/            # Prácticas de administración de sistemas y redes en Linux
 ├── curso_intercomunicacion_y_seguridad_en_redes/       # Prácticas de servicios DNS, criptografía, auditoría y seguridad
 └── scripts/
@@ -30,6 +36,7 @@ IT_portafolio/
 | **1. Red Team vs Blue Team en Infraestructura Linux** | [`Informe_Final_RedTeam_BlueTeam_Linux_COMPLETO.pdf`](./Informe_Final_RedTeam_BlueTeam_Linux_COMPLETO.pdf) | Diseño de red multi-segmento con **Netplan**, despliegue de servicios (SSH, FTP, DNS), reconocimiento con **Nmap**, pruebas de fuerza bruta controlada y defensa activa con **Hardening SSH (puerto 2222)**, **UFW**, **Fail2ban**, **Suricata IDS/IPS** y **Wazuh SIEM**. |
 | **2. Administración Integral de una Red Linux Segura** | [`proyecto_linux_administracion_de_una_red.pdf`](./proyecto_linux_administracion_de_una_red.pdf) | Arquitectura Servidor-Cliente en **Ubuntu Server**, direccionamiento estático con **Netplan**, control de acceso y permisos por grupos (`/opt/proyectos`), volúmenes lógicos **LVM** (`pvcreate`, `vgcreate`, `lvcreate`), cuotas de disco (`quota`), respaldos automatizados con **Cron + Syslog + SCP** y firewall **UFW**. |
 | **3. IT Infrastructure Assessment (PolyWorks)** | [`Test_IT_MiguelAngelDeLaCruzEspinosa.pdf`](./Test_IT_MiguelAngelDeLaCruzEspinosa.pdf) | Automatización de respaldos con política de retención en **PowerShell**, monitoreo de métricas del sistema vía **CIM/WMI**, cálculo de **Subnetting IPv4** (`172.17.0.0/16` a `/21`), aprovisionamiento desatendido de máquinas virtuales con **VBoxManage + Task Scheduler** y diseño de **Active Directory (`acme.local`)**. |
+| **4. Sistema de Ticketing Help Desk & SOC (osTicket + Docker)** | [`Reporte_Laboratorio_osTicket_Windows.pdf`](./Reporte_Laboratorio_osTicket_Windows.pdf) / [`OS-ticketLab/`](./OS-ticketLab/) | Despliegue contenedorizado de **osTicket** y **MySQL 5.7** con **Docker Compose** sobre **Windows 11 + WSL 2** (adaptado y ampliado a partir de la guía de referencia *osTicket Help Desk Docker Lab* para macOS). Incluye diagnóstico y activación de hipervisor (**AMD SVM / VirtualMachinePlatform**), persistencia en volúmenes y gestión del ciclo de vida completo de 9 incidentes reales de **Soporte TI (Active Directory, VPN/MFA, Impresión, SMB/NAS, Base de Datos)** y **SOC (Phishing con macros VBA)**. |
 
 ---
 
@@ -101,3 +108,4 @@ Scripts desarrollados como referencia ejecutable y caja de herramientas a partir
 - **Práctica Enumeración:** Reconocimiento y enumeración de servicios con Nmap, Enum4linux, SMBClient, RPCClient, Nikto y Gobuster.
 - **Práctica Rootkits:** Simulación de IoCs, detección con RKHunter/Chkrootkit/Lynis, análisis forense y remediación con Auditd.
 - **Presentación OWASP:** [`Encrytpion fail.pptx`](./curso_intercomunicacion_y_seguridad_en_redes/Encrytpion%20fail.pptx) — Análisis de fallos criptográficos, herramientas de detección (TruffleHog, Gitleaks, Testssl.sh, Semgrep) y buenas prácticas Zero Trust.
+
